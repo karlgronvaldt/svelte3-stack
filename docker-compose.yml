@@ -1,0 +1,16 @@
+services:
+  db:
+    image: postgres:latest
+    restart: always
+    environment: 
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: db
+    volumes:
+       - db:/var/lib/postgres
+    ports:
+      - "5432:5432"
+
+
+volumes:
+  db:
